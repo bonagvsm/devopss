@@ -1,0 +1,56 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #fff;
+  --text: #1c2330;
+  --muted: #667085;
+  --border: #dfe3e8;
+  --primary: #2f5bea;
+  --danger: #c62828;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.container { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 16px; }
+h1 { margin: 0; font-size: 1.75rem; }
+h2 { margin: 0 0 12px; font-size: 1.1rem; }
+h3 { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.muted { color: var(--muted); margin: 4px 0 0; }
+
+.card, .box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.card-head, .card-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.card-foot { margin-top: 12px; }
+.description { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+small { color: var(--muted); }
+
+.form { display: grid; gap: 12px; }
+label { display: grid; gap: 4px; font-size: 0.875rem; font-weight: 600; }
+input, textarea, select, button { font: inherit; }
+input, textarea, select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+button { padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; cursor: pointer; }
+button:hover:not(:disabled) { background: #f0f2f5; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+button.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+button.primary:hover:not(:disabled) { background: #2449c4; }
+button.danger { color: var(--danger); }
+.actions { display: flex; gap: 8px; }
+
+.filters { display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+.filters input { flex: 1 1 200px; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button[aria-pressed='true'] { background: var(--text); border-color: var(--text); color: #fff; }
+
+.status { font-size: 0.8rem; font-weight: 600; padding: 4px 8px; border-radius: 999px; }
+.status.todo { background: #eef1f6; }
+.status.in_progress { background: #fff3cd; }
+.status.done { background: #d9f2e0; }
+
+.error { color: var(--danger); }
+.box.error { border-color: var(--danger); }
+.box p { margin: 0 0 8px; }
+
+@media (max-width: 480px) {
+  .card-foot { flex-direction: column; align-items: flex-start; }
+}
